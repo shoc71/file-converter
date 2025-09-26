@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converter</title>
+</head>
+<body>
+    <h1>File Converter</h1>
+    
+    <p>hello world</p>
+
+    <input type="file" class="test">
+    <button class="">Convert to</button>
+
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+
+    <form action=""></form>
+
+    <!-- <ul id="audio">
+        <li><a href="#">mp3</a></li>
+        <li><a href="#">ogg</a></li>
+        <li><a href="#">wav</a></li>
+    </ul>
+
+    <ul id="files">
+        <li><a href="#">jpg</a></li>
+        <li><a href="#">png</a></li>
+        <li><a href="#">pdf</a></li>
+        <li><a href="#">doc</a></li>
+        <li><a href="#">webp</a></li>
+    </ul>
+
+    <ul id="video">
+        <li><a href="#">mp4</a></li>
+        <li><a href="#">mp4</a></li>
+    </ul> -->
+
+    <script src="./src/index.js"></script>
+    <script>
+        var subjectObject = {
+            "archive" : ["7z", "gz", "jar", "zip"],
+            "audio" : ["mp3", "wav", "m4a", "oga"],
+            "document" : ["doc", "docm", "docx", "odt", "pdf", "txt"],
+            "ebook" : ["epub", "pdb"],
+            "image" : ["jpg", "png", "svg", "webp", "ico", "gif", "tiff", "bmp", "hdr", "psd", "dds", "heic", "heif", "avic", "cur", "jfif"],
+            "presentation" : ["ppt", "pptx", "odp"],
+            "spreadsheet" : ["csv", "ods", "xlsx"],
+            "vector" : ["cdr", "svg"],
+            "videos" : ["mp4", "mov", "mkv", "avi", "mxf", "mpeg", "ogg", "mpg"]
+        }
+
+        function myFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("mySearch");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myMenu");
+            li = ul.getElementsByTagName("li");
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
