@@ -1,4 +1,6 @@
+<div class="min-h-screen">
+  <router-outlet></router-outlet>
 
-
-
-<router-outlet />
+  <app-footer-main *ngIf="isHome"></app-footer-main>
+  <app-footer-back *ngIf="!isHome"></app-footer-back>
+</div>

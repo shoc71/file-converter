@@ -32,7 +32,7 @@
     </div>
 
     <!-- Preview Grid -->
-    <div class="mt-4 grid grid-cols-5 gap-4 w-full">
+    <div class="mt-4 grid xl:grid-cols-8 lg:grid-cols-6 md:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-4 w-full">
       <div
         *ngFor="let preview of previews; let i = index"
         class="p-3 border rounded-lg flex flex-col items-center bg-gray-800"
@@ -63,36 +63,5 @@
           Confirm Selection
         </button>
     </div>
-  </div>
-
-  <!-- footer -->
-  <div class="flex justify-between items-end p-4">
-      <a href="https://shoc71.github.io/eDash/" target="_blank" rel="noreferrer"
-        class="flex items-center border-2 border-white text-white rounded px-4 py-2 hover:bg-blue-600 hover:text-white transition"
-        >
-            <img 
-                src="assets/logos/compass.png"
-                alt="Compass Icon"
-                class="rounded"
-                width="50"
-            />
-            <span class="ml-2 font-semibold">
-                <strong>
-                    Other Works
-                </strong>
-            </span>
-      </a>
-
-      <a href="https://github.com/shoc71/file-converter" target="_blank" rel="noreferrer"
-        class="flex items-center border-2 border-white text-white rounded px-4 py-2 hover:bg-gray-600 hover:text-white transition"
-        >
-          <img 
-              src="assets/logos/github-logo.png"
-              alt="Github Icon"
-              class="rounded"
-              width="50"
-          />
-          <span class="ml-2 font-semibold">Source Code</span>
-      </a>
   </div>
 </main>
