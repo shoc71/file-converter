@@ -1,1 +1,23 @@
-<p>convert works!</p>
+<div class="p-6 text-white">
+  <h2 class="text-3xl font-bold mb-6 text-center">Convert Files</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div *ngFor="let item of files" class="bg-gray-800 rounded-lg p-4 flex flex-col">
+      <img *ngIf="item.preview" [src]="item.preview" class="h-32 w-full object-cover rounded mb-3"/>
+      <p class="text-sm truncate font-semibold">{{ item.file.name }}</p>
+
+      <label class="text-sm mb-1">Convert to:</label>
+      <select class="bg-black border border-gray-600 rounded p-2 text-sm" [(ngModel)]="item.targetFormat">
+        <option *ngFor="let fmt of ['png', 'jpg', 'pdf']" [value]="fmt">{{ fmt.toUpperCase() }}</option>
+      </select>
+
+      <button
+        class="mt-3 bg-blue-600 hover:bg-blue-700 py-2 rounded transition"
+        (click)="convertFile(item)"
+        [disabled]="uploading"
+      >
+        Convert
+      </button>
+    </div>
+  </div>
+</div>

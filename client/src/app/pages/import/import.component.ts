@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { FileStoreService } from '../../services/file-store.service';
 
 @Component({
   selector: 'app-import',
@@ -8,8 +10,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './import.component.sass'
 })
 export class ImportComponent {
+  
+  constructor(
+    private router: Router,
+    private fileStore: FileStoreService
+  ) {}
+  
   title = 'client';
-
   files: File[] = [];
   previews: { file: File; url?: string }[] = [];
   dragOver = false;
@@ -100,6 +107,11 @@ export class ImportComponent {
     if (event.dataTransfer?.files) {
       this.onFilesSelected(event.dataTransfer.files);
     }
+  }
+
+  goToPage(pageName:String) {
+    this.fileStore.setFiles(this.previews)
+    this.router.navigate([`${pageName}`]);
   }
 }
 
