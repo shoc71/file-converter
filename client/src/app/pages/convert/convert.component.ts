@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FileStoreService, StoredFile } from '../../services/file-store.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-convert',
-  imports: [FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    HttpClientModule
+  ],
   templateUrl: './convert.component.html'
 })
 export class ConvertComponent implements OnInit {
