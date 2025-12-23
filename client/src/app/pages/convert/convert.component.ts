@@ -44,7 +44,7 @@ export class ConvertComponent implements OnInit {
     formData.append('target_format', item.targetFormat || 'pdf');
 
     this.uploading = true;
-    this.http.post('https://YOUR-RENDER-BACKEND.onrender.com/convert/', formData, { responseType: 'blob' })
+    this.http.post('https://file-converter-server-l08t.onrender.com/convert/', formData, { responseType: 'blob' })
       .subscribe(blob => {
         const url = URL.createObjectURL(blob);
         item.preview = url;
