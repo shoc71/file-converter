@@ -10,12 +10,18 @@ from fpdf import FPDF
 
 app = FastAPI()
 
+origins = [
+    "https://file-converter-4sww.onrender.com",  # frontend
+    "http://localhost:4200",                     # local Angular dev
+]
+
 # Allow your Angular frontend domain
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://file-converter-4sww.onrender.com/"],
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins = origins,
+    allow_credentials = True,
+    allow_methods = ["*"],
+    allow_headers = ["*"],
 )
 
 UPLOAD_DIR = Path(tempfile.gettempdir()) / "uploads"
